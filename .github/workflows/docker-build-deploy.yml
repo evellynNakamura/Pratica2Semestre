@@ -18,6 +18,14 @@ jobs:
     - name: Verificar Docker
       run: docker --version
 
+    # Verificar Render CLI
+    - name: Instalar Render CLI
+      run: |
+        curl -fsSL https://render.com/static/cli/install.sh | bash
+
+    - name: Verificar Render CLI
+      run: render --version
+
     # Build da imagem Docker
     - name: Build da imagem Docker
       run: |
@@ -33,15 +41,6 @@ jobs:
       run: |
         docker tag pratica:latest evellyn/pratica:latest
         docker push evellyn/pratica:latest
-
-    # Instalar Render CLI
-    - name: Instalar Render CLI
-      run: |
-        curl -fsSL https://render.com/static/cli/install.sh | bash
-
-    # Verificar Render CLI
-    - name: Verificar Render CLI
-      run: render --version
 
     # Login no Render usando a chave de API
     - name: Login no Render
