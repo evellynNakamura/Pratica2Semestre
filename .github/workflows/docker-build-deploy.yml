@@ -24,7 +24,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.docker_userE }}/restoran:latest .
+          docker build -t ${{ secrets.docker_user }}/restoran:latest .
           docker push ${{ secrets.docker_user }}/restoran:latest
 
       - name: Deploy to Render
