@@ -44,3 +44,7 @@ jobs:
     - name: Deploy no Render
       run: |
         render deploy --service-id ${{secrets.render_id}}
+
+    - name: Verificar Docker
+      run: docker --version
+
